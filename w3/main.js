@@ -45,4 +45,5 @@ function determineHouseSize(houseSize) {
     console.log(`Based on size of house (${houseSize}), points will be ${carbonFootprintPoints}.`);
 }
 
-determineHouseSize("apartment")
+determineHouseSize("apartment");
+
