@@ -1,6 +1,5 @@
 const cfpData = [];
 function determineHouseHoldPts(numberInHousehold) {
-    console.log("inside block scope");
     let houseHoldPoints = 0;
     if (numberInHousehold === 1) {
         houseHoldPoints = 14;
@@ -23,7 +22,6 @@ function determineHouseHoldPts(numberInHousehold) {
 }
 
 function determineHouseSize(houseSize) {
-    console.log("inside block scope");
     let houseSizePoints = 0;
     if(houseSize === "large") {
         houseSizePoints = 10;
@@ -50,7 +48,13 @@ function start(numberInHousehold, houseSize) {
 }
 
 function displayOutput() {
-
+    for(arr of cfpData){
+        console.log(arr);
+        const output = document.getElementById("output");
+        const newP = document.createElement("p");
+        newP.textContent = `The amount of people in the household is ${arr[0]} so add ${arr[2]} to your score, the housesize is ${arr[1]}, so add ${arr[3]} to your score. Your total carbon foorprint score is ${arr[4]}.`;
+        output.appendChild(newP);
+    }
 }
 
 start(7, "large");
