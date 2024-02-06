@@ -51,9 +51,13 @@ function displayOutput() {
     for(arr of cfpData){
         console.log(arr);
         const output = document.getElementById("output");
+        const newH1 = document.createElement("h1");
+        newH1.textContent = `Your Carbon Footprint is ${arr[4]}`;
         const newP = document.createElement("p");
         newP.textContent = `The amount of people in the household is ${arr[0]} so add ${arr[2]} to your score, the housesize is ${arr[1]}, so add ${arr[3]} to your score. Your total carbon foorprint score is ${arr[4]}.`;
+        output.appendChild(newH1);
         output.appendChild(newP);
+       
     }
 }
 
