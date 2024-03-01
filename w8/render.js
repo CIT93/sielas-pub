@@ -1,9 +1,8 @@
-import {FORM} from './main.js';
 const TBL = document.getElementById("tab-data");
+const FORM = document.getElementById("form");
 
 function renderTblHeading() {
   TBL.innerHTML = "";
-  let i = 4;
   const btnDel = document.createElement("button");
   btnDel.textContent = "Del";
   const table = document.createElement("table");
@@ -16,31 +15,19 @@ function renderTblHeading() {
     "Footprint",
     "Action",
   ];
-  if(i >= 5){
     headingTextArr.forEach(function (text) {
       const th = document.createElement("th");
       th.textContent = text;
       tr.appendChild(th);
   });
-  console.log(i);
-  console.log("if");
-  
-  }
-  else {
-    console.log("else");
-    console.log(i);
-    TBL.innerHTML = "";
-
-  }
- 
   thead.appendChild(tr);
   table.appendChild(thead);
   return table;
-  
-  
 }
+  
 
-function renderTblBtn(index, data) {
+
+function renderTblBtn(obj, index, data) {
   const td = document.createElement("td");
   const btnEdit = document.createElement("button");
   const btnDel = document.createElement("button");
@@ -55,8 +42,11 @@ function renderTblBtn(index, data) {
     }
   });
   btnEdit.addEventListener('click', function(e){
-    if(FORM[index] < -1)
-    data.splice(FORM[index], 1);
+    FORM[1].value = obj.firstname;
+    FORM[2].value = obj.lastname;
+    FORM[3].value = obj.members;
+    FORM[4].value = obj.size;
+    data.splice(index,1);
     renderTbl(data);
   });
   return td;
@@ -78,18 +68,19 @@ function renderTblBody(data) {
         tr.appendChild(td); // appending it to the tr that we created outside
       }
     }
-    const td = renderTblBtn(index, data);
+    const td = renderTblBtn(obj, index, data);
     tr.appendChild(td);
     tbody.appendChild(tr);
   });
   return tbody;
 }
 function renderTbl(data) {
-  const table = renderTblHeading();
-  const tbody = renderTblBody(data);
-  // const tbody = document.createElement("tbody");
-  table.appendChild(tbody);
-  TBL.appendChild(table);
+  TBL.innerHTML = "";
+  if (data.length !== 0) {
+    const table = renderTblHeading();
+    const tbody = renderTblBody(data);
+    table.appendChild(tbody);
+    TBL.appendChild(table);
+  }
 }
-
 export { renderTbl };
