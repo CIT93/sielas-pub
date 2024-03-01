@@ -1,7 +1,11 @@
+import {FORM} from './main.js';
 const TBL = document.getElementById("tab-data");
 
 function renderTblHeading() {
   TBL.innerHTML = "";
+  let i = 4;
+  const btnDel = document.createElement("button");
+  btnDel.textContent = "Del";
   const table = document.createElement("table");
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
@@ -12,18 +16,28 @@ function renderTblHeading() {
     "Footprint",
     "Action",
   ];
-  // const headingTextArr = [
-  //   "Name",
-  //   "Footprint",
-  // ];
-  headingTextArr.forEach(function (text) {
-    const th = document.createElement("th");
-    th.textContent = text;
-    tr.appendChild(th);
+  if(i >= 5){
+    headingTextArr.forEach(function (text) {
+      const th = document.createElement("th");
+      th.textContent = text;
+      tr.appendChild(th);
   });
+  console.log(i);
+  console.log("if");
+  
+  }
+  else {
+    console.log("else");
+    console.log(i);
+    TBL.innerHTML = "";
+
+  }
+ 
   thead.appendChild(tr);
   table.appendChild(thead);
   return table;
+  
+  
 }
 
 function renderTblBtn(index, data) {
@@ -41,7 +55,9 @@ function renderTblBtn(index, data) {
     }
   });
   btnEdit.addEventListener('click', function(e){
-
+    if(FORM[index] < -1)
+    data.splice(FORM[index], 1);
+    renderTbl(data);
   });
   return td;
 }
