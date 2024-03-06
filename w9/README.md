@@ -1,0 +1,1 @@
+LOCAL STORAGE UNDERSTANDING: So far, I understand that in order for the website to store the data we would input, it would have to be stored in our local storage. To do so, we must serialize the data in order to store it into the local storage. Using the JSON.stringify and JSON.parse to do so.git ad
