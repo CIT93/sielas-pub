@@ -24,3 +24,10 @@ html {
   tbody tr:nth-child(even){
     background-color: red;
   }
+  
+  .error{
+    color: red;
+  }
+  .invalid{
+    border-color: red;
+  }

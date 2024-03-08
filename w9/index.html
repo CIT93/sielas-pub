@@ -12,26 +12,23 @@
     <form id="form">
       <fieldset>
         <legend>Calculating Your Carbon Footprint Points</legend>
-        
         <div>
           <label for="firstname">First Name:</label>
           <input
-            id = "firstname"
+            id = "firstName"
             type="text"
             name="firstname"
-            
-            
           />
+          <span id="firstNameError" class="error"></span>
         </div>
         <div>
           <label for="lastname">Last Name:</label>
           <input
-            id = "lastname"
+            id = "lastName"
             type="text"
             name="lastname"
-           
-            
           />
+          <span id="lastNameError" class="error"></span>
         </div>
         <div>
           <label for="numberinhousehold">Number in Household:</label>
@@ -55,7 +52,8 @@
             <option value="large">Large</option>
           </select>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">Submit</button><br>
+        <span id="submitError" class="error"></span>
       </fieldset>
     </form>
     <div id="output"></div>
