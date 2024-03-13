@@ -1,0 +1,1 @@
+Most of this is review from my CSCI 40 class at Fresno State but its been a while since then so this is a good refresher for me.
