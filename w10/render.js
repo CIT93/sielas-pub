@@ -15,7 +15,7 @@ const renderTblHeading = () => {
     "Footprint",
     "Action",
   ];
-    headingTextArr.forEach( text => {
+    headingTextArr.forEach(text => {
       const th = document.createElement("th");
       th.textContent = text;
       tr.appendChild(th);
@@ -25,7 +25,7 @@ const renderTblHeading = () => {
   return table;
 }
   
-const onUpdate = (index = 0, data = []) => {
+const onUpdate = (index, data) => {
   data.splice(index,1);
   saveLS(data);
   renderTbl(data);
@@ -39,10 +39,10 @@ const renderTblBtn = (obj, index, data) => {
   btnDel.textContent = "Del";
   td.appendChild(btnEdit);
   td.appendChild(btnDel);
-  btnDel.addEventListener('click', (...e) => {
+  btnDel.addEventListener('click', e => {
      onUpdate(index, data);
   });
-  btnEdit.addEventListener('click', (...e) => {
+  btnEdit.addEventListener('click', e => {
     FORM[1].value = obj.firstname;
     FORM[2].value = obj.lastname;
     FORM[3].value = obj.members;

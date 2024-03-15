@@ -5,7 +5,7 @@ const saveLS = cfpData => {
 
 }
 
-function getLS() {
+const getLS = () => {
     const retrievedArr = localStorage.getItem("cfp");
     if(retrievedArr !== null) {
         return JSON.parse(retrievedArr);

@@ -3,15 +3,30 @@ import { determineHouseHoldPts, determineHouseSize } from "./footprint.js";
 import {FORM, FNAME, LNAME, SUBMIT} from "./global.js";
 import {cfpData, saveLS} from "./storage.js";
 
-const start = (firstName = "Siela", lastName = "Sok", numberInHousehold = 3, houseSize = "apartment") => {
-  const houseHoldPTS = determineHouseHoldPts(numberInHousehold);
-  const houseSizePTS = determineHouseSize(houseSize);
+// const start = (firstName, lastName, numberInHousehold, houseSize) => {
+//   const houseHoldPTS = determineHouseHoldPts();
+//   const houseSizePTS = determineHouseSize();
+//   const total = houseHoldPTS + houseSizePTS;
+//   cfpData.push({
+//     firstname: firstName,
+//     lastname: lastName,
+//     members: numberInHousehold,
+//     size: houseSize,
+//     memberPoints: houseHoldPTS,
+//     sizePoints: houseSizePTS,
+//     cfpTotal: total,
+//   });
+// }
+
+const start = (...i) => {
+  const houseHoldPTS = determineHouseHoldPts(i[2]);
+  const houseSizePTS = determineHouseSize(i[3]);
   const total = houseHoldPTS + houseSizePTS;
   cfpData.push({
-    firstname: firstName,
-    lastname: lastName,
-    members: numberInHousehold,
-    size: houseSize,
+    firstname: i[0],
+    lastname: i[1],
+    members:i[2],
+    size: i[3],
     memberPoints: houseHoldPTS,
     sizePoints: houseSizePTS,
     cfpTotal: total,
