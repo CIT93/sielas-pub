@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" defer src="main.js"></script>
+    <title>Async Workout</title>
+</head>
+<body>
+
+<form id="form">
+<div></div>
+    <fieldset>
+        <legend>WORKOUT</legend>
+        <div>
+            <label for="">Exercise Type:</label>
+            <select name="workouttype" id="workouttype" required>
+            <option value="">Choose Workout:</option>
+            <option value="pushup">Pushup</option>
+            <option value="situp">Situp</option>
+            <option value="plank">Plank</option>
+            <option value="dumbbell curl">Dumbbell Curl</option>
+            </select>
+        </div>
+        <div>
+            <label for="">Target Number of Reps:</label>
+            <input 
+            id = "reps"
+            type="number"
+            name = "reps"
+            required
+            />
+        </div>
+        <div>
+            <label for="">Time in Minutes:</label>
+            <input type="number"
+            id = "time"
+            type = "number"
+            name = "time"
+            required
+            />
+        </div>
+        <button type="submit">Submit</button><br>
+    </fieldset>
+</form> 
+<div id="output"></div>
+</body>
+</html>
