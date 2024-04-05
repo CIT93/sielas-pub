@@ -1,18 +1,24 @@
 const FORM = document.getElementById("form");
 const OUTPUT = document.getElementById("output")
 
-const displayOutput= (callback) => {
+const displayOutput = (callback) => {
+const workout = FORM.workouttype.value;
+const reps = FORM.reps.value;
 const h1 = document.createElement("h1");
-h1.textContent = console.log(`You have selected "${FORM.workouttype.value}" as your workout.`);
+const h3 = document.createElement("h3");
+h1.textContent = `You have selected "${workout}" as your workout.`;
+h3.textContent = `Reps to do: ${reps}`;
 OUTPUT.appendChild(h1);
+OUTPUT.appendChild(h3);
+
 setTimeout(() => {
-    callback(FORM.workouttype.value);
+    callback(workout);
 }, 2000);
 }
 
-const stopWorkout = (callback) => {
+const stopWorkout = (workout) => {
     const h2 = document.createElement("h2");
-    h2.textContent = `Finish ${FORM.workouttype.value}`;
+    h2.textContent = `Finish ${workout}s`;
     OUTPUT.appendChild(h2);
   };
 
