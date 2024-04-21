@@ -4,6 +4,7 @@ const h1 = document.createElement("h1");
 const h3 = document.createElement("h3");
 const h4 = document.createElement("h4");
 
+
 const displayText = () => {
   h1.textContent = `You have selected "${FORM.workouttype.value}" as your workout.`;
   h3.textContent = `Reps to do: ${FORM.reps.value}`;
